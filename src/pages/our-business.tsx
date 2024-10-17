@@ -18,7 +18,7 @@ const BusinessSegments = () => {
   return (
     <>
     <Helmet>
-        <title> {`About us - ${CONFIG.appName}`}</title>
+        <title> {`${CONFIG.appName}`}</title>
     </Helmet>
     <div
       style={{
