@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
+import { useThemeContext } from 'src/theme/theme-provider';
+
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -61,11 +63,15 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export default function ToogleMode() {
+  const { mode, toggleTheme } = useThemeContext();
+
   return (
     <FormGroup>
       <FormControlLabel
         control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
         label=""
+        checked={mode==="dark"}
+        onChange={toggleTheme}
       />
     </FormGroup>
   );
