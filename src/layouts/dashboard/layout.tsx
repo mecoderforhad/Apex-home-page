@@ -1,7 +1,5 @@
 import type { Theme, SxProps, Breakpoint } from '@mui/material/styles';
 
-import { useState } from 'react';
-
 import { useTheme } from '@mui/material/styles';
 
 import { Main } from './main';
@@ -71,7 +69,7 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
       //   m: 3
       // }}
     >
-      <Main sx={{m: 3}}>{children}</Main>
+      <Main>{children}</Main>
     </LayoutSection>
   );
 }

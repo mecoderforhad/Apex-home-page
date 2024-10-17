@@ -136,8 +136,28 @@ export const lightPalette = {
   action: action.light,
 };
 
+// Dark palette definition (example, adjust colors as needed)
+export const darkPalette = {
+  ...basePalette,
+  text: {
+    primary: '#fff',
+    secondary: grey[400],
+    disabled: grey[600],
+  },
+  background: {
+    paper: grey[900],
+    default: grey[800],
+    neutral: grey[700],
+  },
+  action: {
+    ...baseAction,
+    active: grey[300],
+  },
+};
+
 // ----------------------------------------------------------------------
 
-export const colorSchemes: Partial<Record<'light', ColorSystemOptions>> = {
+export const colorSchemes: Partial<Record<'light' | 'dark', ColorSystemOptions>> = {
   light: { palette: lightPalette },
+  dark: { palette: darkPalette },
 };

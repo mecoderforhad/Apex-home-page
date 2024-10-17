@@ -11,15 +11,10 @@ import { DashboardLayout } from 'src/layouts/dashboard';
 // ----------------------------------------------------------------------
 
 export const HomePage = lazy(() => import('src/pages/home'));
-export const BlogPage = lazy(() => import('src/pages/blog'));
-export const AllTaskPage = lazy(() => import('src/features/all-tasks/AllTasks'));
-export const AddTaskPage = lazy(() => import('src/features/add-task/components/AddTask'));
-export const UpdateTaskPage = lazy(() => import('src/features/add-task/components/UpdateTask'));
-export const CompletedTaskPage = lazy(() => import('src/features/completed-tasks/CompletedTasks'));
-export const PendingTaskPage = lazy(() => import('src/features/pending-tasks/PendingTasks'));
-export const UserPage = lazy(() => import('src/pages/user'));
+export const AboutUsPage = lazy(() => import('src/pages/about-us'));
+export const OurBusinessPage = lazy(() => import('src/pages/our-business'));
+export const KeyStrengthPage = lazy(() => import('src/pages/key-strengths'));
 export const SignInPage = lazy(() => import('src/pages/sign-in'));
-export const ProductsPage = lazy(() => import('src/pages/products'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 
 // ----------------------------------------------------------------------
@@ -48,14 +43,10 @@ export function Router() {
         </DashboardLayout>
       ),
       children: [
-        { element: <AllTaskPage />, index: true },
-        { path: 'user', element: <UserPage /> },
-        { path: 'products', element: <ProductsPage /> },
-        { path: 'blog', element: <BlogPage /> },
-        { path: 'add-task', element: <AddTaskPage /> },
-        { path: 'update-task/:id', element: <UpdateTaskPage /> },
-        { path: 'completed-tasks', element: <CompletedTaskPage /> },
-        { path: 'pending-tasks', element: <PendingTaskPage /> },
+        { element: <HomePage />, index: true },
+        { path: 'about-us', element: <AboutUsPage /> },
+        { path: 'our-business', element: <OurBusinessPage /> },
+        { path: 'key-strengths', element: <KeyStrengthPage /> },
       ],
     },
     {

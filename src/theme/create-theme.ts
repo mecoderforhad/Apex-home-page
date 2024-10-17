@@ -6,9 +6,16 @@ import { shadows, typography, components, colorSchemes, customShadows } from './
 
 // ----------------------------------------------------------------------
 
-export function createTheme(): Theme {
+export function createTheme(mode: 'light' | 'dark'): Theme {
+  const selectedColorScheme = colorSchemes[mode] || colorSchemes.light;
   const initialTheme = {
-    colorSchemes,
+    palette: {
+      mode,
+      ...selectedColorScheme?.palette,
+      primary: {
+        main: '#ff5252',
+      },
+    },
     shadows: shadows(),
     customShadows: customShadows(),
     shape: { borderRadius: 8 },
