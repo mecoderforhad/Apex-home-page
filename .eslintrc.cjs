@@ -26,6 +26,12 @@ module.exports = {
    */
   rules: {
     // general
+    // "files": [
+    //   "src/modules/template/*"
+    // ],
+    // "rules": {
+    //   "no-unused-vars": "off"
+    // },
     "import/no-extraneous-dependencies": [
       "error",
       {

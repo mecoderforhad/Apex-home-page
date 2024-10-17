@@ -20,7 +20,7 @@ const BusinessSegments = () => {
       }}
     >
       <Typography variant="h2" align="center" gutterBottom color={theme.palette.text.primary} my={5}>
-        OUR BUSINESS SEGMENTS
+        OUR <span style={{ color: '#0056b3' }}>BUSINESS</span> SEGMENTS
       </Typography>
       <Grid container spacing={4} justifyContent="center" my={5}>
         {segments.map((segment, index) => (

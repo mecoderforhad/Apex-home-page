@@ -1,5 +1,4 @@
-// Install MUI by running: npm install @mui/material @emotion/react @emotion/styled
-import { Container, Box, Typography, Button, Grid, CardMedia } from '@mui/material';
+import { Box, Grid, Container, Typography } from '@mui/material';
 
 import ImageGallery from 'src/common/ImageGallery';
 
@@ -39,7 +38,7 @@ export default function AboutUs() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            my: 2
+            my: 2,
           }}
         >
           <ImageGallery />

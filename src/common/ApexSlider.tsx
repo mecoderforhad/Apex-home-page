@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Typewriter } from 'react-simple-typewriter'; 
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 import { Box, Typography } from '@mui/material';
 

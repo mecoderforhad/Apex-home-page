@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 
-import { CONFIG } from 'src/config-global';
 import ApexSlider from 'src/common/ApexSlider';
-
-import AboutUs from './about-us'; 
-import BusinessSegments from './our-business';
+import VideoGallery from 'src/common/VideoGallery';
+ 
+import AboutUs from './about-us';
 import KeyStrengths from './key-strengths';
+import BusinessSegments from './our-business';
+import CertificationSwiper from './our-certifications';
 
 
 // ----------------------------------------------------------------------
@@ -14,17 +15,19 @@ export default function Page() {
   return (
     <>
       <Helmet>
-        <title> {`Dashboard - ${CONFIG.appName}`}</title>
+        <title>Apex Holding Limited</title>
         <meta
           name="description"
-          content="The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style"
+          content="Apex Holding Limited"
         />
-        <meta name="keywords" content="react,material,kit,application,dashboard,admin,template" />
+        <meta name="keywords" content="Apex Holding Limited" />
       </Helmet>
       <ApexSlider />
       <AboutUs />
       <BusinessSegments />
       <KeyStrengths />
+      <VideoGallery />
+      <CertificationSwiper />
     </>
   );
 }
