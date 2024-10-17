@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import MenuIcon from '@mui/icons-material/Menu';
-import { Box, Tab, Tabs, AppBar, Drawer, Toolbar, Typography, IconButton, useMediaQuery, Button } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { Menu as MenuIcon } from '@mui/icons-material';
+import { Box, Tab, Tabs, AppBar, Drawer, Toolbar, Typography, IconButton, useMediaQuery } from '@mui/material';
 
-import { navData } from '../config-nav-dashboard';
 import ToogleMode from './ToogleMode';
+import { navData } from '../config-nav-dashboard';
 
 const Navbar: React.FC = () => {
   const [value, setValue] = useState(0);
   const isSmallScreen = useMediaQuery('(max-width:600px)');
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === 'dark';
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -35,6 +39,9 @@ const Navbar: React.FC = () => {
             component={Link}
             to={nav.path}
             onClick={() => setValue(index)}
+            sx={{
+              color: isDarkMode ? '#fff' : '#000',
+            }}
           />
         ))}
       </Tabs>
@@ -46,8 +53,8 @@ const Navbar: React.FC = () => {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: 'rgba(255, 255, 255, 0.8)',
-          color: '#333',
+          backgroundColor: isDarkMode ? '#333' : 'rgba(255, 255, 255, 0.8)',
+          color: isDarkMode ? '#fff' : '#333',
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
           padding: '10px',
           backdropFilter: 'blur(10px)',
@@ -72,7 +79,16 @@ const Navbar: React.FC = () => {
           {/* Render Tabs normally for larger screens */}
           {!isSmallScreen && (
             <>
-              <Tabs value={value} onChange={handleChange} centered>
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                centered
+                sx={{
+                  '.MuiTab-root': {
+                    color: isDarkMode ? '#fff' : '#333',
+                  },
+                }}
+              >
                 {navData?.map((nav, index) => (
                   <Tab
                     key={nav.title}
