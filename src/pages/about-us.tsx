@@ -11,7 +11,7 @@ export default function AboutUs() {
           ABOUT <span style={{ color: '#0056b3' }}>US</span>
         </Typography>
       </Box>
-      <Grid container>
+      <Grid container my={5}>
         <Grid item lg={5.5} mx={2} sx={{ height: '350px' }}>
           <Box my={2}>
             <Typography variant="h5" component="h2" fontWeight="bold" mb={2}>

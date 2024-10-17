@@ -4,6 +4,8 @@ import { CONFIG } from 'src/config-global';
 import ApexSlider from 'src/common/ApexSlider';
 
 import AboutUs from './about-us'; 
+import BusinessSegments from './our-business';
+import KeyStrengths from './key-strengths';
 
 
 // ----------------------------------------------------------------------
@@ -21,6 +23,8 @@ export default function Page() {
       </Helmet>
       <ApexSlider />
       <AboutUs />
+      <BusinessSegments />
+      <KeyStrengths />
     </>
   );
 }
