@@ -12,9 +12,9 @@ import { certifications } from 'src/_mock/_apex';
 
 SwiperCore.use([Autoplay, FreeMode, Pagination]);
 
-export default function CertificationSwiper(){
+export default function CertificationSwiper() {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
-  
+
   return (
     <Box sx={{ textAlign: 'center', py: 4 }}>
       <Typography variant="h2" sx={{ mb: 2 }} my={5}>
@@ -35,7 +35,7 @@ export default function CertificationSwiper(){
       >
         {certifications.map((cert) => (
           <SwiperSlide key={cert.id} style={{ display: 'flex', justifyContent: 'center' }}>
-            <Card sx={{ borderRadius: '0px', width: '100%', mx: 1 }}>
+            <Card sx={{ borderRadius: '0px', width: '100%', mx: 1, p: 2 }}>
               <CardMedia
                 component="img"
                 height={isSmallScreen ? '100' : '180'}
@@ -59,4 +59,4 @@ export default function CertificationSwiper(){
       </Swiper>
     </Box>
   );
-};
+}
