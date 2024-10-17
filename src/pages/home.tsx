@@ -3,8 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import { CONFIG } from 'src/config-global';
 import ApexSlider from 'src/common/ApexSlider';
 
-import { OverviewAnalyticsView } from 'src/sections/overview/view';
-
 import AboutUs from './about-us'; 
 
 
@@ -23,7 +21,6 @@ export default function Page() {
       </Helmet>
       <ApexSlider />
       <AboutUs />
-      <OverviewAnalyticsView />
     </>
   );
 }

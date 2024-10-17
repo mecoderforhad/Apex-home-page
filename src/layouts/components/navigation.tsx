@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import MenuIcon from '@mui/icons-material/Menu';
-import { Box, Tab, Tabs, AppBar, Drawer, Toolbar, Typography, IconButton, useMediaQuery } from '@mui/material';
+import { Box, Tab, Tabs, AppBar, Drawer, Toolbar, Typography, IconButton, useMediaQuery, Button } from '@mui/material';
 
 import { navData } from '../config-nav-dashboard';
+import ToogleMode from './ToogleMode';
 
 const Navbar: React.FC = () => {
   const [value, setValue] = useState(0);
@@ -54,7 +55,11 @@ const Navbar: React.FC = () => {
       >
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-            <img src={isSmallScreen ? "/apex_Icon.png" : "/apex_logo.png"} alt="Logo" style={{ height: '60px', marginRight: '8px' }} />
+            <img
+              src={isSmallScreen ? '/apex_Icon.png' : '/apex_logo.png'}
+              alt="Logo"
+              style={{ height: '60px', marginRight: '8px' }}
+            />
           </Typography>
 
           {/* Icon button to open the drawer on small screens */}
@@ -66,17 +71,20 @@ const Navbar: React.FC = () => {
 
           {/* Render Tabs normally for larger screens */}
           {!isSmallScreen && (
-            <Tabs value={value} onChange={handleChange} centered>
-              {navData?.map((nav, index) => (
-                <Tab
-                  key={nav.title}
-                  label={nav.title}
-                  component={Link}
-                  to={nav.path}
-                  onClick={() => setValue(index)}
-                />
-              ))}
-            </Tabs>
+            <>
+              <Tabs value={value} onChange={handleChange} centered>
+                {navData?.map((nav, index) => (
+                  <Tab
+                    key={nav.title}
+                    label={nav.title}
+                    component={Link}
+                    to={nav.path}
+                    onClick={() => setValue(index)}
+                  />
+                ))}
+              </Tabs>
+              <ToogleMode />
+            </>
           )}
         </Toolbar>
       </AppBar>
