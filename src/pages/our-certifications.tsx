@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode, Pagination } from 'swiper/modules';
 
 import { Box, Card, CardMedia, Typography, CardContent } from '@mui/material';
+
 import { certifications } from 'src/_mock/_apex';
 
 SwiperCore.use([Autoplay, FreeMode, Pagination]);
@@ -33,7 +34,7 @@ export default function CertificationSwiper(){
       >
         {certifications.map((cert) => (
           <SwiperSlide key={cert.id} style={{ display: 'flex', justifyContent: 'center' }}>
-            <Card sx={{ borderRadius: '0px', width: '100%', mx: 1 }}>
+            <Card sx={{ borderRadius: '0px', width: '100%', mx: 1}}>
               <CardMedia
                 component="img"
                 height="180"

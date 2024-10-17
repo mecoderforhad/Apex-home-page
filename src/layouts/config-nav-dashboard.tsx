@@ -11,32 +11,32 @@ export const navData = [
   },
   {
     title: 'ABOUT US',
-    path: '/add-task',
+    path: '/about-us',
     icon: <AddIcon />,
   },
   {
     title: 'OUR BUSINESS',
-    path: '/pending-tasks',
+    path: '/our-business',
     icon: <MoreHorizIcon />,
   },
   {
     title: 'SUSTAINABILITY',
-    path: '/completed-tasks',
+    path: '/key-strengths',
     icon: <ChecklistOutlinedIcon />,
   },
   {
     title: 'CSR',
-    path: '/completed-tasks',
+    path: '/',
     icon: <ChecklistOutlinedIcon />,
   },
   {
     title: 'CAREER',
-    path: '/completed-tasks',
+    path: '/',
     icon: <ChecklistOutlinedIcon />,
   },
   {
     title: 'CONTACT',
-    path: '/completed-tasks',
+    path: '/',
     icon: <ChecklistOutlinedIcon />,
   },
 ];

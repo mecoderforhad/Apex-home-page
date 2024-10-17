@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { styled } from '@mui/material/styles';
 import ImageList from '@mui/material/ImageList';
 import IconButton from '@mui/material/IconButton';
@@ -5,6 +7,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import ImageListItem from '@mui/material/ImageListItem';
 
 import { itemData } from 'src/_mock/_apex';
+
+import ThumbPlayModal from './Modal/GalleryViewerModal';
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {
@@ -36,20 +40,43 @@ const ImageContainer = styled('div')({
 });
 
 export default function ImageGallery() {
+  const [open, setOpen] = useState<boolean>(false);
+  const [data, setData] = useState<any>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   return (
-    <ImageList sx={{ width: 500 }} variant="quilted" cols={4}>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-          <ImageContainer>
-            <img {...srcset(item.img, 121, item.rows, item.cols)} alt={item.title} loading="lazy" />
-            <OverlayIcon className="overlay">
-              <IconButton color="inherit">
-                <SearchIcon />
-              </IconButton>
-            </OverlayIcon>
-          </ImageContainer>
-        </ImageListItem>
-      ))}
-    </ImageList>
+    <>
+      <ImageList sx={{ width: 500 }} variant="quilted" cols={4}>
+        {itemData.map((item, index) => (
+          <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+            <ImageContainer>
+              <img
+                {...srcset(item.img, 121, item.rows, item.cols)}
+                alt={item.title}
+                loading="lazy"
+              />
+              <OverlayIcon className="overlay">
+                <IconButton
+                  color="inherit"
+                  onClick={() => {
+                    setData(itemData);
+                    setOpen(true);
+                    setCurrentIndex(index);
+                  }}
+                >
+                  <SearchIcon />
+                </IconButton>
+              </OverlayIcon>
+            </ImageContainer>
+          </ImageListItem>
+        ))}
+      </ImageList>
+      <ThumbPlayModal
+        open={open}
+        images={data}
+        thumbPlyerClose={() => setOpen(false)}
+        initialIndex={currentIndex}
+      />
+    </>
   );
 }

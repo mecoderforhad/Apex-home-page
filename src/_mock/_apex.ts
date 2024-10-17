@@ -10,37 +10,37 @@ export const certifications = [
 
 export const itemData = [
     {
-      img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+      img: 'https://apexholdings.com/img/about/srimp-002.jpg',
       title: 'Breakfast',
       cols: 1, 
       rows: 1
     },
     {
-      img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+      img: 'https://apexholdings.com/img/about/textile_line.jpg',
       title: 'Burger',
       cols: 1, 
       rows: 1
     },
     {
-      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+      img: 'https://apexholdings.com/img/about/abbl_002.jpg',
       title: 'Camera',
       cols: 1, 
       rows: 1
     },
     {
-      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+      img: 'https://apexholdings.com/img/about/agriscience_001.jpg',
       title: 'Coffee',
       cols: 1, 
       rows: 1
     },
     {
-      img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+      img: 'https://apexholdings.com/img/about/yarn_001.jpg',
       title: 'Breakfast',
       cols: 1, 
       rows: 1
     },
     {
-      img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+      img: 'https://apexholdings.com/img/about/chemical.jpg',
       title: 'Burger',
       cols: 1, 
       rows: 1

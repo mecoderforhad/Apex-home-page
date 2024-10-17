@@ -1,5 +1,9 @@
+import { Helmet } from 'react-helmet-async';
+
 import { Grid, Card, useTheme, Typography, CardContent } from '@mui/material';
 import { Factory, Restaurant, AccountTree, EnergySavingsLeaf } from '@mui/icons-material';
+
+import { CONFIG } from 'src/config-global';
 
 const BusinessSegments = () => {
   const theme = useTheme();
@@ -12,11 +16,14 @@ const BusinessSegments = () => {
   ];
 
   return (
+    <>
+    <Helmet>
+        <title> {`About us - ${CONFIG.appName}`}</title>
+    </Helmet>
     <div
       style={{
         padding: '40px 20px',
         backgroundColor: theme.palette.mode === 'dark' ? '#2e3b55' : '#e8e8e8',
-        margin: "40px 0px"
       }}
     >
       <Typography variant="h2" align="center" gutterBottom color={theme.palette.text.primary} my={5}>
@@ -71,6 +78,7 @@ const BusinessSegments = () => {
         ))}
       </Grid>
     </div>
+    </>
   );
 };
 

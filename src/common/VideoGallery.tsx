@@ -33,7 +33,7 @@ export default function VideoGallery() {
 
    // YouTube video options
    const youtubeOpts = {
-    height: '390',
+    height: '500',
     width: '100%',
     playerVars: {
       autoplay: 1, // Auto-play the video
@@ -84,8 +84,9 @@ export default function VideoGallery() {
                   style={{
                     position: 'relative',
                     width: '100%',
-                    height: '150px',
+                    height: '200px',
                     backgroundColor: '#000',
+                    cursor: "pointer"
                   }}
                 >
                   <img

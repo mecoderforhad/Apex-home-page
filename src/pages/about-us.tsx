@@ -1,9 +1,15 @@
+import { Helmet } from 'react-helmet-async';
+
 import { Box, Grid, Container, Typography } from '@mui/material';
 
+import { CONFIG } from 'src/config-global';
 import ImageGallery from 'src/common/ImageGallery';
 
-export default function AboutUs() {
-  return (
+export default function Page() {
+  return (<>
+    <Helmet>
+        <title> {`About us - ${CONFIG.appName}`}</title>
+    </Helmet>
     <Container maxWidth="lg">
       <Box textAlign="center" my={2}>
         <Typography variant="h2" component="h1" fontWeight="bold">
@@ -45,5 +51,6 @@ export default function AboutUs() {
         </Grid>
       </Grid>
     </Container>
+    </>
   );
 }
