@@ -62,11 +62,13 @@ const Navbar: React.FC = () => {
       >
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-            <img
-              src={isSmallScreen ? '/apex_Icon.png' : '/apex_logo.png'}
-              alt="Logo"
-              style={{ height: '60px', marginRight: '8px' }}
-            />
+            <a href="/" target="_blank" rel="noopener noreferrer">
+              <img
+                src={isSmallScreen ? '/apex_Icon.png' : '/apex_logo.png'}
+                alt="Logo"
+                style={{ height: '60px', marginRight: '8px' }}
+              />
+            </a>
           </Typography>
 
           {/* Icon button to open the drawer on small screens */}
