@@ -6,13 +6,14 @@ import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode, Pagination } from 'swiper/modules';
 
-import { Box, Card, CardMedia, Typography, CardContent } from '@mui/material';
+import { Box, Card, CardMedia, Typography, CardContent, useMediaQuery } from '@mui/material';
 
 import { certifications } from 'src/_mock/_apex';
 
 SwiperCore.use([Autoplay, FreeMode, Pagination]);
 
 export default function CertificationSwiper(){
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
   
   return (
     <Box sx={{ textAlign: 'center', py: 4 }}>
@@ -34,20 +35,24 @@ export default function CertificationSwiper(){
       >
         {certifications.map((cert) => (
           <SwiperSlide key={cert.id} style={{ display: 'flex', justifyContent: 'center' }}>
-            <Card sx={{ borderRadius: '0px', width: '100%', mx: 1}}>
+            <Card sx={{ borderRadius: '0px', width: '100%', mx: 1 }}>
               <CardMedia
                 component="img"
-                height="180"
+                height={isSmallScreen ? '100' : '180'}
                 width="180"
                 image={cert.url}
                 alt={cert.alt}
                 sx={{ objectFit: 'contain' }}
               />
-              <CardContent>
-                <Typography variant="h6" component="div" sx={{ textAlign: 'center' }}>
-                  {cert.alt}
-                </Typography>
-              </CardContent>
+              {isSmallScreen ? (
+                ''
+              ) : (
+                <CardContent>
+                  <Typography variant="h6" component="div" sx={{ textAlign: 'center' }}>
+                    {cert.alt}
+                  </Typography>
+                </CardContent>
+              )}
             </Card>
           </SwiperSlide>
         ))}

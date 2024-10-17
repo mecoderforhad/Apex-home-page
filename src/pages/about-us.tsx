@@ -8,7 +8,7 @@ import ImageGallery from 'src/common/ImageGallery';
 export default function Page() {
   return (<>
     <Helmet>
-        <title> {`About us - ${CONFIG.appName}`}</title>
+        <title>{`About us - ${CONFIG.appName}`}</title>
     </Helmet>
     <Container maxWidth="lg">
       <Box textAlign="center" my={2}>
