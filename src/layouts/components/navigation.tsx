@@ -48,7 +48,6 @@ const Navbar: React.FC = () => {
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
           color: '#333',
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          borderRadius: '8px',
           padding: '10px',
           backdropFilter: 'blur(10px)',
         }}

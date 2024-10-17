@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import ApexSlider from 'src/common/ApexSlider';
 
 import { CONFIG } from 'src/config-global';
 
@@ -17,7 +18,7 @@ export default function Page() {
         />
         <meta name="keywords" content="react,material,kit,application,dashboard,admin,template" />
       </Helmet>
-
+      <ApexSlider />
       <OverviewAnalyticsView />
     </>
   );

@@ -41,7 +41,7 @@ export function HeaderSection({
 
   const toolbarStyles = {
     default: {
-      ...bgBlur({ color: varAlpha(theme.vars.palette.background.defaultChannel, 0.8) }),
+      ...bgBlur({ color: varAlpha(theme.vars.palette.background.defaultChannel, 0.1) }),
       minHeight: 'auto',
       height: 'var(--layout-header-mobile-height)',
       transition: theme.transitions.create(['height', 'background-color'], {
@@ -71,7 +71,7 @@ export function HeaderSection({
     >
       {slots?.topArea}
 
-      <Toolbar
+      {/* <Toolbar
         disableGutters
         {...slotProps?.toolbar}
         sx={{
@@ -96,7 +96,7 @@ export function HeaderSection({
 
           {slots?.rightArea}
         </Container>
-      </Toolbar>
+      </Toolbar> */}
 
       {slots?.bottomArea}
     </AppBar>
